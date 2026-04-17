@@ -57,3 +57,20 @@ body {
 .menu a.activo {
     color: red;
 }
+
+.main {
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+.titulo-fav {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.mensaje-vacio {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #f0efef;
+}

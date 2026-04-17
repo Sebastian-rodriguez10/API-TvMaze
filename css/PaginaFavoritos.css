@@ -116,3 +116,29 @@ body {
 .boton-eliminar:hover {
     background-color: #e50914;
 }
+
+.footer {
+    background: black;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 3px solid #e50914;
+}
+
+@media (min-width: 600px) {
+    .tarjetas {
+        grid-template-columns: repeat(2, 250px);
+    }
+}
+
+@media (min-width: 900px) {
+    .tarjetas {
+        grid-template-columns: repeat(3, 250px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .tarjetas {
+        grid-template-columns: repeat(3, 300px);
+    }
+}

@@ -4,3 +4,56 @@ body {
     background: linear-gradient(120deg,  #c7060f, #1f1f1f, #141414);
     color: white;
 }
+
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    background: black;
+    text-align: center;
+    padding: 35px;
+    border-bottom: 3px solid #e50914;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+.menu {
+    display: flex;
+    justify-content: end;
+    gap: 60px;
+    width: 1200px;
+    padding-right: 50px;
+    margin-top: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a.activo {
+    color: red;
+}

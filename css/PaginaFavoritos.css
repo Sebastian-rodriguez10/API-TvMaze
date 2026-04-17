@@ -74,3 +74,45 @@ body {
     font-size: 1.2rem;
     color: #f0efef;
 }
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.tarjeta {
+    background: #222;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    box-shadow: 0 2px 8px black;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(229, 9, 20, 0.6);
+    border-color: #e50914;
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    margin: 10px 0;
+}
+
+.boton-eliminar {
+    background-color: #333;
+    margin-top: 10px;
+}
+
+.boton-eliminar:hover {
+    background-color: #e50914;
+}

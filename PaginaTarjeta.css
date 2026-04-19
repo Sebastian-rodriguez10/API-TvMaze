@@ -131,3 +131,24 @@ button:hover {
     border-top: 3px solid #e50914;
     margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .contenedorTarjeta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .detallesPelicula {
+        text-align: center;
+    }
+
+    .botonFavoritos {
+        justify-content: center;
+    }
+
+    .menu {
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+    }
+}

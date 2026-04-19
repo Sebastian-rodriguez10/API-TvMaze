@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #141414;
+    color: white;
+}
+
+.encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    background: black;
+    text-align: center;
+    padding: 35px;
+    border-bottom: 3px solid #e50914;
+}
+
+h1 {
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    justify-content: start;
+    display: flex;
+}
+
+.logo span {
+    color: #e50914;
+}
+
+p {
+    color: white;
+}
+
+.main {
+    padding: 20px;
+    margin: auto;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 60px;
+    width: 1200px;
+    padding-right: 50px;
+    margin-top: 10px;
+    
+}
+
+.menu a {
+    margin: 0;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.menu a:hover {
+    color: red;
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: red;
+    transition: width 0.3s;
+}
+
+.menu a:hover::after {
+    width: 100%;
+}
+
+.menu a.activo {
+    color: red;
+}
+
+
+.menu a:focus {
+    outline: 2px solid blue;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    background: #222;
+    color: white;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #e50914;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}

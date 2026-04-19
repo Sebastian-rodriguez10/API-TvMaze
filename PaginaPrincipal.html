@@ -3,9 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagina principal</title>
+  
+
 </head>
 <body>
-    
+    <header class="encabezado">
+        <h1 class="logo">TV<span>MAZE</span></h1>
+
+        <nav class="menu">
+        <a href="#" class="activo">Inicio</a>
+        <a href="#">Eventos</a>
+        <a href="#" class="icono">Contacto</a>
+        <a href="#">¿Quienes somos?</a>
+    </nav>
+    </header>
+
+    <main class="main">
+       
+
+        <form id="formPelis">
+            <input type="text" id="pelicula" placeholder="Ingrese nombre de la pelicula o serie">
+            <button type="submit">Buscar</button>
+            <button id="btnFav">Peliculas favoritas</button>
+        </form>
+
+        <div id="resultado"></div>
+
+      <div class="tarjetas"></div>
+
+<div class="botones">
+    <div class="fila-botones">
+        <label  for="porPagina" style="color:white;">Mostrar:</label>
+        <select id="porPagina">
+            <option value="6">6</option>
+            <option value="12">12</option>
+            <option value="18">18</option>
+            <option value="24">24</option>
+        </select>
+        <button id="btnPrev">Anterior</button>
+        <button id="btnNext">Siguiente</button>
+    </div>
+    <div class="fila-botones">
+        <button id="menos2">-2</button>
+        <button id="mas2">+2</button>
+        <button id="menos5">-5</button>
+        <button id="mas5">+5</button>
+    </div>
+    <div id="paginacion"></div>
+</div>
+    </main>
+
+    <footer class="footer">
+        <p>2026 Taller API TvMaze ©</p>
+    </footer>
 </body>
 </html>

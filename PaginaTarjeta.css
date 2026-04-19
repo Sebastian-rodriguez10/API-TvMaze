@@ -58,3 +58,76 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     flex-wrap: wrap;
 }
+
+.imagen {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+}
+
+.imagen img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+}
+
+.detallesPelicula {
+    flex: 2;
+    min-width: 300px;
+}
+
+.detallesPelicula h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #e50914;
+}
+
+.descripcion {
+    line-height: 1.6;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.detallesPelicula p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.botonFavoritos {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #e50914;
+    color: white;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #b0060f;
+}
+
+.botonVolver {
+    background: #333;
+}
+
+.botonVolver:hover {
+    background: #555;
+}
+
+.footer {
+    background: black;
+    text-align: center;
+    padding: 15px;
+    border-top: 3px solid #e50914;
+    margin-top: 40px;
+}

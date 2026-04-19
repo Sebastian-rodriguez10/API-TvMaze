@@ -1,5 +1,5 @@
-import { state } from './State.js';
-import { esFavorito, toggleFavorito } from './Persistence.js';
+import { state } from './state.js';
+import { esFavorito, toggleFavorito } from './percistence.js';
 
 const contenedor = document.querySelector('.tarjetas');
 const paginacion  = document.getElementById('paginacion');
@@ -35,3 +35,45 @@ export function renderTarjetas() {
         ${fav ? '★ Quitar' : '☆ Favorito'}
       </button>
     `;
+
+    div.querySelector('.btn-fav').addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleFavorito(show);
+      renderTarjetas();
+    });
+
+    contenedor.appendChild(div);
+  });
+
+  renderPaginacion();
+}
+
+function renderPaginacion() {
+  paginacion.innerHTML = '';
+  const total = Math.ceil(state.shows.length / state.porPagina);
+  const desde = Math.max(0, state.pagina - 3);
+  const hasta  = Math.min(total - 1, state.pagina + 3);
+
+  for (let i = desde; i <= hasta; i++) {
+    const btn = document.createElement('button');
+    btn.textContent = i + 1;
+    if (i === state.pagina) btn.style.background = '#e50914';
+    btn.addEventListener('click', () => {
+      state.pagina = i;
+      renderTarjetas();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    paginacion.appendChild(btn);
+  }
+}
+
+export function setResultado(texto) {
+  resultado.textContent = texto;
+}
+
+export function irAPagina(n) {
+  const total = Math.ceil(state.shows.length / state.porPagina);
+  state.pagina = Math.max(0, Math.min(n, total - 1));
+  renderTarjetas();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}

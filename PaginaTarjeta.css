@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #141414;
+    color: white;
+}
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: black;
+    padding: 25px 40px;
+    border-bottom: 3px solid #e50914;
+}
+
+.logo {
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+}
+
+.logo span {
+    color: #e50914;
+}

@@ -1,56 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalle</title>
     <link rel="stylesheet" href="PaginaTarjeta.css">
+    <script type="module" src="/scripts/detalle.js"></script>
 </head>
 <body>
-    <header class="encabezado">
-        <h1 class="logo">TV<span>MAZE</span></h1>
 
-        <nav class="menu">
-            <a href="PaginaPrincipal.html">Inicio</a>
-            <a href="#">Eventos</a>
-            <a href="#">Contacto</a>
-            <a href="#">¿Quiénes somos?</a>
-        </nav>
-    </header>
-     <main class="contenedorPrincipal">
+<header class="encabezado">
+    <h1 class="logo">TV<span>MAZE</span></h1>
 
-        <section class="contenedorTarjeta">
+    <nav class="menu">
+        <a href="PaginaPrincipal.html">Inicio</a>
+        <a href="#">Eventos</a>
+        <a href="#">Contacto</a>
+        <a href="#">¿Quiénes somos?</a>
+    </nav>
+</header>
 
-            <div class="imagen">
-                <img src="https://static.tvmaze.com/uploads/images/medium_portrait/81/202627.jpg" alt="Serie">
-            </div>
+<main class="contenedorPrincipal">
 
-            <div class="detallesPelicula">
-                <h2>Nombre de la Serie</h2>
+    <section class="contenedorTarjeta" id="detalle">
+        <p>Cargando información...</p>
+    </section>
 
-                <p class="descripcion">
-                    Aca va la descripcion
-                </p>
+</main>
 
-                <p><strong>Géneros:</strong> Drama, Action</p>
-                <p><strong>Rating:</strong> 8.5</p>
-                <p><strong>Idioma:</strong> English</p>
-                <p><strong>Estado:</strong> Running</p>
-                <p><strong>Estreno:</strong> 2015-04-12</p>
+<footer class="footer">
+    <p>2026 Taller API TvMaze ©</p>
+</footer>
 
-                <div class="botonFavoritos">
-                    <button>Agregar a Favoritos</button>
-                    <a href="index.html">
-                        <button class="botonVolver">Volver</button>
-                    </a>
-                </div>
-            </div>
-
-        </section>
-
-    </main>
-     <footer class="footer">
-        <p>2026 Taller API TvMaze ©</p>
-    </footer>
 </body>
 </html>

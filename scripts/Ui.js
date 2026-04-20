@@ -39,6 +39,10 @@ export function renderTarjetas() {
       </button>
     `;
 
+    div.addEventListener('click', () => {
+    window.location.href = `PaginaTarjeta.html?id=${show.id}`;
+    });
+
 
     contenedor.appendChild(div);
   });

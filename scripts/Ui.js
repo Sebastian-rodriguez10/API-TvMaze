@@ -1,5 +1,5 @@
 import { buscarShows, obtenerShows } from './service.js';
-import { getFavoritos, esFavorito, toggleFavorito } from './Persistence.js';
+import { getFavoritos, esFavorito, toggleFavorito } from './percistence.js';
 import { state } from './state.js';
 
 const contenedor = document.querySelector('.tarjetas');

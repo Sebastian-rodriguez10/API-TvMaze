@@ -1,11 +1,10 @@
-import { obtenerFavoritos, toggleFavorito } from './percistence.js';
+import { getFavoritos, toggleFavorito } from './percistence.js';
 
 const contenedor = document.getElementById('contenedor-favoritos');
 
 function renderizarFavoritos() {
-    const favoritos = obtenerFavoritos();
+    const favoritos = getFavoritos(); 
 
-    
     if (favoritos.length === 0) {
         contenedor.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 20px;">
@@ -15,13 +14,11 @@ function renderizarFavoritos() {
         return;
     }
 
-    
     contenedor.innerHTML = '';
 
-    
     favoritos.forEach(serie => {
         const tarjeta = document.createElement('div');
-        tarjeta.classList.add('tarjeta'); 
+        tarjeta.classList.add('tarjeta');
 
         tarjeta.innerHTML = `
             <img src="${serie.image?.medium || ''}" alt="${serie.name}">
@@ -33,7 +30,6 @@ function renderizarFavoritos() {
         contenedor.appendChild(tarjeta);
     });
 
-    
     document.querySelectorAll('.btn-eliminar').forEach(boton => {
         boton.addEventListener('click', (e) => {
             const id = e.target.getAttribute('data-id');
@@ -46,6 +42,5 @@ function renderizarFavoritos() {
         });
     });
 }
-
 
 renderizarFavoritos();

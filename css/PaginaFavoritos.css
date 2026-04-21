@@ -75,3 +75,52 @@ body {
     max-width: 1200px;
     margin: 0 auto 40px auto;
 }
+.tarjeta {
+    background: #181818;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05);
+    border-color: #e50914;
+    box-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.tarjeta h3 {
+    font-size: 1.1rem;
+    margin: 15px 0;
+}
+
+.btn-eliminar {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #e50914;
+}
+
+.footer {
+    background: black;
+    text-align: center;
+    padding: 25px;
+    border-top: 3px solid #e50914;
+    color: #888;
+}

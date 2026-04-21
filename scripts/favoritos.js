@@ -1,3 +1,4 @@
+
 import { getFavoritos, toggleFavorito } from './percistence.js';
 
 const contenedor = document.getElementById('contenedor-favoritos');
@@ -19,6 +20,7 @@ function renderizarFavoritos() {
     favoritos.forEach(serie => {
         const tarjeta = document.createElement('div');
         tarjeta.classList.add('tarjeta');
+        tarjeta.setAttribute('data-id', serie.id);
 
         tarjeta.innerHTML = `
             <img src="${serie.image?.medium || ''}" alt="${serie.name}">
@@ -27,11 +29,21 @@ function renderizarFavoritos() {
                 <button class="btn-eliminar" data-id="${serie.id}">Eliminar</button>
             </div>
         `;
+        
+        tarjeta.addEventListener('click', (e) => {
+            if (e.target.classList.contains('btn-eliminar')) return;
+
+            const id = tarjeta.getAttribute('data-id');
+            window.location.href = `../PaginaTarjeta.html?id=${id}`;
+        });
+
         contenedor.appendChild(tarjeta);
     });
 
     document.querySelectorAll('.btn-eliminar').forEach(boton => {
         boton.addEventListener('click', (e) => {
+            e.stopPropagation();
+
             const id = e.target.getAttribute('data-id');
             const serieAEliminar = favoritos.find(s => s.id == id);
             

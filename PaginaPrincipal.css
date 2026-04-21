@@ -217,6 +217,11 @@ button:hover {
     margin-top: 30px;
     border-top: 3px solid #e50914;
 }
+#btnFav{
+    text-decoration: none;
+    color: white;
+    
+}
 
 @media (min-width: 600px) {
     .tarjetas {

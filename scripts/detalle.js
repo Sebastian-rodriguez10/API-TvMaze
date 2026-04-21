@@ -1,3 +1,4 @@
+import { getFavoritos, toggleFavorito, esFavorito } from './percistence.js';
 const contenedor = document.getElementById('detalle');
 
 const params = new URLSearchParams(window.location.search);
@@ -30,11 +31,21 @@ async function cargarDetalle() {
                     <a href="PaginaPrincipal.html">
                         <button class="botonVolver">Volver</button>
                     </a>
+                    <button id="btn-fav-detalle" class="botonFav">
+                        ${esFavorito(show.id) ? '★ Quitar de favoritos' : '☆ Agregar a favoritos'}
+                    </button>
                 </div>
             </div>
         `;
 
+        const btnFav = document.getElementById('btn-fav-detalle');
+        btnFav.addEventListener('click', () => {
+            toggleFavorito(show); 
+            btnFav.innerHTML = esFavorito(show.id) ? '★ Quitar de favoritos' : '☆ Agregar a favoritos';
+        });
+
     } catch (error) {
+        console.error(error);
         contenedor.innerHTML = `<p>Error al cargar detalles</p>`;
     }
 }

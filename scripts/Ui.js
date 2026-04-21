@@ -34,15 +34,22 @@ export function renderTarjetas() {
       <h3 style="margin:4px 0;font-size:1rem;">${show.name}</h3>
       <p style="margin:2px 0;font-size:0.78rem;color:#aaa;">${show.genres?.join(', ') || ''}</p>
       <p style="margin:4px 0;font-size:0.85rem;">${show.rating?.average ? '⭐ ' + show.rating.average : ''}</p>
-      <button class="btn-fav" style="background:${fav ? '#e50914' : '#333'};margin-top:8px;font-size:0.8rem;padding:6px 14px;">
+      <button class="btn-fav" style="background:${fav ? '#e50914' : '#333'};margin-top:8px;font-size:0.8rem;padding:6px 14px;border:none;color:white;cursor:pointer;border-radius:4px;">
         ${fav ? '★ Quitar' : '☆ Favorito'}
       </button>
     `;
 
-    div.addEventListener('click', () => {
-    window.location.href = `PaginaTarjeta.html?id=${show.id}`;
+    div.addEventListener('click', (e) => {
+      if (e.target.classList.contains('btn-fav')) return; 
+      window.location.href = `PaginaTarjeta.html?id=${show.id}`;
     });
 
+    const btnFav = div.querySelector('.btn-fav');
+    btnFav.addEventListener('click', (e) => {
+      e.stopPropagation(); 
+      toggleFavorito(show);
+      renderTarjetas(); 
+    });
 
     contenedor.appendChild(div);
   });
@@ -106,13 +113,14 @@ export function renderHistorial(onBuscar) {
 
 export function renderFiltros() {
   filtrosContainer.innerHTML = '';
- const generos = ['Todos', ...new Set(
-  state.showsOriginales.flatMap(s => s.genres || [])
-)].sort((a, b) => {
-  if (a === 'Todos') return -1;
-  if (b === 'Todos') return 1;
-  return a.localeCompare(b);
-});
+  const generos = ['Todos', ...new Set(
+    state.showsOriginales.flatMap(s => s.genres || [])
+  )].sort((a, b) => {
+    if (a === 'Todos') return -1;
+    if (b === 'Todos') return 1;
+    return a.localeCompare(b);
+  });
+
   const titulo = document.createElement('p');
   titulo.textContent = 'Filtrar por género:';
   titulo.style.cssText = 'color:#aaa;font-size:0.85rem;margin-bottom:6px;';
@@ -159,7 +167,7 @@ export function registrarEventos(cargarInicio) {
       state.pagina          = 0;
       state.filtroGenero    = 'Todos';
       agregarHistorial(query);
-      setResultado(`${state.shows.length} resultado(s) para "${query}" — Endpoint: https://api.tvmaze.com/search/shows?q=${query}`);
+      setResultado(`${state.shows.length} resultado(s) para "${query}"`);
       document.title = `Buscando: ${query} | TVMaze`;
       renderHistorial(ejecutarBusqueda);
       renderFiltros();

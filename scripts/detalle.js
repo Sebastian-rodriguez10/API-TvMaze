@@ -1,4 +1,4 @@
-import { obtenerFavoritos, toggleFavorito, esFavorito } from './percistence.js';
+import { getFavoritos, toggleFavorito, esFavorito } from './percistence.js';
 const contenedor = document.getElementById('detalle');
 
 const params = new URLSearchParams(window.location.search);
@@ -9,7 +9,6 @@ async function cargarDetalle() {
         const res = await fetch(`https://api.tvmaze.com/shows/${id}`);
         const show = await res.json();
 
-        
         contenedor.innerHTML = `
             <div class="imagen">
                 <img src="${show.image?.original || ''}" alt="${show.name}">
